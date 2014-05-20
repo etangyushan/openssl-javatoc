@@ -1,0 +1,17 @@
+/* 遍历目录中的txt文件 */
+int matchfile (char *dirname, char *keywordfile);
+
+/* 转换文件 */
+/* 1:.doc, 2:.pdf */
+int filetotxt(char *dirname);
+
+/* 得到计算机状态 */
+info_ma data;
+data = computerstate(NULL);
+
+/* 发送json格式数据到https */
+char paramstr[][10] = {"param1", "param2", "param3"};
+char msg[3][1024] = {};
+res = mycurlstr(HTTPSURL, msg, paramstr);
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./

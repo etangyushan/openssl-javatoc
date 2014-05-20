@@ -1,0 +1,119 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ATPATH	judgeftype.c	3;"	d	file:
+CACERT	ssl_client.c	6;"	d	file:
+CLIENT_RDWR_H	client_rdwr.h	2;"	d
+CO	makefile	/^CO=ssl_client.o curlhttps.o seekkey.o judgeftype.o client_openssl.o client_socket.o client_rdwr.o my_syslog.o computermsg.o$/;"	m
+CPU_OCCUPY	computerstate.h	/^} CPU_OCCUPY;$/;"	t	typeref:struct:PACKED
+CURLHTTPS_H_	curlhttps.h	2;"	d
+DEBUG	mydebug.h	16;"	d
+DEBUG	mydebug.h	18;"	d
+DIRFILETOTXT	ssl_client.c	15;"	d	file:
+HTTPSURL	ssl_client.c	/^char *HTTPSURL = "https:\/\/10.63.99.185:8443\/cnpc_dlp_v_1.0\/monitorSet.action?action=receiveData&json=";$/;"	v
+KEYWORD	ssl_client.c	21;"	d	file:
+LD	makefile	/^LD=-Wall -lssl -ldl -pthread -lcurl$/;"	m
+LG	makefile	/^LG=-g$/;"	m
+MATCH	seekkey.c	4;"	d	file:
+MEM_OCCUPY	computerstate.h	/^} MEM_OCCUPY;$/;"	t	typeref:struct:PACKED1
+MSGLENGTH	client_rdwr.h	15;"	d
+MSGLENGTH	ssl_client.c	11;"	d	file:
+MYCERTF	ssl_client.c	7;"	d	file:
+MYDEBUG_H_	mydebug.h	9;"	d
+MYKEYF	ssl_client.c	8;"	d	file:
+MYSYSLOG	ssl_client.c	17;"	d	file:
+MY_SYSLOG_H	my_syslog.h	2;"	d
+NOMATCH	seekkey.c	5;"	d	file:
+OPENSSL_SERVER_H_	client_openssl.h	2;"	d
+PACKED	computerstate.h	/^typedef  struct PACKED$/;"	s
+PACKED1	computerstate.h	/^typedef struct PACKED1$/;"	s
+PORT	ssl_client.c	4;"	d	file:
+PROJECT1_H_	computerstate.h	2;"	d
+SEEKKEY_H_	seekkey.h	2;"	d
+SERVER	ssl_client.c	5;"	d	file:
+SOCKET_CLIENT_H_	client_socket.h	2;"	d
+SSL_CLIETN_H_	ssl_client.h	2;"	d
+VALUE	ssl_client.c	12;"	d	file:
+__DEBUG__	mydebug.h	13;"	d
+computermsg	computerstate.c	/^info_ma computermsg(char* netname)$/;"	f
+countcpu	rate_cpu.c	/^double countcpu()$/;"	f
+cpu	computerstate.h	/^	double cpu;$/;"	m	struct:sent_info
+data	rate_disk.c	/^static hadd data;$/;"	v	file:
+disk	computerstate.h	/^    double disk;$/;"	m	struct:sent_info
+divie_num	rate_disk.c	/^int divie_num(char *line,int flag)$/;"	f
+f_open	rate_disk.c	/^int f_open(char *filename)$/;"	f
+fa	ssl_client.c	/^void fa (int signal)$/;"	f
+file_receive	client_rdwr.c	/^int file_receive (SSL *ssl, char *filename)$/;"	f
+file_send	client_rdwr.c	/^int file_send (SSL *ssl, char *filename)$/;"	f
+file_type	judgeftype.c	/^int file_type(char *fname)$/;"	f
+filetotxt	judgeftype.c	/^int filetotxt(char *dirname)$/;"	f
+flag	client_rdwr.h	/^	int flag;$/;"	m	struct:msg
+free	computerstate.h	/^	unsigned long free;$/;"	m	struct:PACKED1
+free_hadd	computerstate.h	/^}free_hadd;$/;"	t	typeref:struct:node
+free_home	computerstate.h	/^	long free_home;$/;"	m	struct:node
+free_root	computerstate.h	/^	long free_root;$/;"	m	struct:node
+get	computerstate.h	/^    double get;$/;"	m	struct:sent_info
+get_cpumsg	rate_cpu.c	/^CPU_OCCUPY get_cpumsg () $/;"	f
+get_file_size	seekkey.c	/^unsigned long get_file_size (const char *path)$/;"	f
+get_memoccupy	rate_memory.c	/^double get_memoccupy (MEM_OCCUPY *mem)$/;"	f
+hadd	computerstate.h	/^} hadd;$/;"	t	typeref:struct:__anon1
+hdd	rate_disk.c	/^double hdd()  $/;"	f
+hearbeat	heartbeat.c	/^int hearbeat ()$/;"	f
+idle	computerstate.h	/^	unsigned int idle;$/;"	m	struct:PACKED
+info_ma	computerstate.h	/^} info_ma;$/;"	t	typeref:struct:sent_info
+iowait	computerstate.h	/^	unsigned int iowait;$/;"	m	struct:PACKED
+irq	computerstate.h	/^	unsigned int irq;$/;"	m	struct:PACKED
+keys	ssl_client.c	/^int keys;$/;"	v
+main	computerstate.c	/^int main()$/;"	f
+main	heartbeat.c	/^int main()$/;"	f
+main	rate_cpu.c	/^int main()$/;"	f
+main	ssl_client.c	/^int main ()$/;"	f
+match_file_pthread	ssl_client.c	/^void *match_file_pthread (void *p)$/;"	f
+matchfile	seekkey.c	/^int matchfile (char *dirname, char *keywordfile)$/;"	f
+memory	computerstate.h	/^	double memory;$/;"	m	struct:sent_info
+msg	client_rdwr.h	/^	char msg[MSGLENGTH];$/;"	m	struct:msg
+msg	client_rdwr.h	/^typedef struct msg$/;"	s
+msgfile	client_rdwr.h	/^} msgfile;$/;"	t	typeref:struct:msg
+my_ipconfig	rate_net.c	/^long *my_ipconfig(char *ath0)  $/;"	f
+my_split	rate_memory.c	/^unsigned long my_split(char* s1,char** s2)$/;"	f
+my_syslog	my_syslog.c	/^int my_syslog(char *file, char *logname, char *buf)$/;"	f
+mycurl	curlhttps.c	/^int mycurl(char *url, char *filename, char param[][10])$/;"	f
+mycurlstr	curlhttps.c	/^int mycurlstr(char *url, char msg[][1024], char param[][10])$/;"	f
+name	computerstate.h	/^	char name[20];$/;"	m	struct:PACKED
+name	computerstate.h	/^	char name[20];$/;"	m	struct:PACKED1
+name2	computerstate.h	/^	char name2[20];$/;"	m	struct:PACKED1
+nice	computerstate.h	/^	unsigned int nice;$/;"	m	struct:PACKED
+node	computerstate.h	/^typedef struct node $/;"	s
+numcapture	rate_cpu.c	/^int numcapture(char *str, int *cpunum, int size)$/;"	f
+openssl_init	client_openssl.c	/^SSL_CTX* openssl_init (char *cipher, char *cacert, char *mycertf, char *mykeyf)$/;"	f
+openssl_socket	client_openssl.c	/^SSL* openssl_socket (SSL_CTX* ctx, int sockfd)$/;"	f
+put	computerstate.h	/^	double put;$/;"	m	struct:sent_info
+recivefrom_https_pthread	ssl_client.c	/^void *recivefrom_https_pthread (void *p)$/;"	f
+rest_hdd	rate_disk.c	/^double rest_hdd()$/;"	f
+rt_da	rate_disk.c	/^static free_hadd rt_da;$/;"	v	file:
+seekkey	seekkey.c	/^int seekkey(char *fname, char *keyword)$/;"	f
+sendto_https_pthread	ssl_client.c	/^void *sendto_https_pthread (void *p)$/;"	f
+sendto_sftp_pthread	ssl_client.c	/^void *sendto_sftp_pthread (void *p)$/;"	f
+sent_info	computerstate.h	/^typedef struct sent_info$/;"	s
+show_certs	client_openssl.c	/^void show_certs (SSL *ssl)$/;"	f
+socket_fd	client_socket.c	/^int socket_fd (char *addr, int port)$/;"	f
+softirq	computerstate.h	/^	unsigned int softirq;$/;"	m	struct:PACKED
+split_name	judgeftype.c	/^int split_name(char *str, char *out)$/;"	f
+split_suffix	judgeftype.c	/^char *split_suffix(char *str)$/;"	f
+ssl	ssl_client.c	/^SSL *ssl;$/;"	v
+stat	client_rdwr.h	/^	char stat[MSGLENGTH];$/;"	m	struct:msg
+string_send	client_rdwr.c	/^int string_send (SSL *ssl, char *str)$/;"	f
+struct_send	client_rdwr.c	/^int struct_send (SSL *ssl, msgfile famsg)$/;"	f
+system	computerstate.h	/^	unsigned int system;$/;"	m	struct:PACKED
+tag	ssl_client.c	/^int tag = 0;$/;"	v
+total	computerstate.h	/^	unsigned long total;$/;"	m	struct:PACKED1
+total_home	computerstate.h	/^	double	 total_home;$/;"	m	struct:__anon1
+total_root	computerstate.h	/^	double	 total_root;$/;"	m	struct:__anon1
+total_size	computerstate.h	/^	double	 total_size;$/;"	m	struct:__anon1
+total_swap	computerstate.h	/^	double	 total_swap;$/;"	m	struct:__anon1
+transform_file_pthread	ssl_client.c	/^void *transform_file_pthread (void *p)$/;"	f
+update_details	client_rdwr.c	/^char *update_details ()$/;"	f
+user	computerstate.h	/^	unsigned int user;$/;"	m	struct:PACKED

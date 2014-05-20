@@ -1,0 +1,21 @@
+OO=crt_que.o daemon.o dir_file.o main.o
+OOS=crt_que.o daemon.o dir_file.o
+CC=gcc
+LD=-Wall -g
+LDS=-Wall -g -shared
+all:daemon mydaemon test
+daemon:$(OO)
+	$(CC) $(LD) $(OO) -o daemon
+%.o:%.c
+	$(CC) -c $< -o $@
+mydaemon:$(OO)
+	$(CC) $(LDS) $(OOS) -olibmydaemon.so
+%.o:%.c
+	$(CC) -c $< -o $@ -fpic
+test:$(OO)
+	$(CC) $(LD) $(OO) -o test
+%.o:%.c
+	$(CC) -c $< -o $@
+clean::
+	rm -f *.o daemon test 
+

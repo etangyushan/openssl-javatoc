@@ -1,0 +1,196 @@
+1.	程序运行所需文件和产生的相关文件的路径
+minihttpd服务器接收java端策略的文件目录：/root/detector/policy/keyword.plc
+保存minihttpd服务器程序进程号的文件：        
+/root/detector/minihttpd/minihttpdpid.log
+保存需要转换文件的目录 ：/root/detector/before_transform/*.doc
+保存转换后.txt文件的目录 ：/root/detector/after_transform/*.txt
+保存产生匹配信息文件的目录：/root/detector/match/*.txt
+客户端日志：/root/detector/log/client.log
+匹配文件产生的日志：/root/detector/log/filematch.log
+没有匹配文件产生的日志：/root/detector/log/filenomatch.log
+目录结构：
+—myopenssl			//主目录
+——client				//客户端目录
+——server			//服务端目录
+——demoCA			//证书存放目录
+——README			//说明文档
+Client目录包含文件：
+Makefile		//生成客户端的可执行程序，终端输入make即可
+Ssl_client.c 
+Ssl_client.h
+//Socket相关宏定义
+――#define PORT 7979				//要连接的服务器端口号
+――#define SERVER "127.0.0.1"     //要连接的服务器地址
+//SSL相关宏定义
+――#define CACERT "../demoCA/private/ca.crt"  //ca证书路径
+――#define MYCERTF "../demoCA/certs/client.crt" //客户端证书路径
+――#define MYKEYF "../demoCA/private/client.key"  //客户端私钥
+//发送信息最大长度
+――#define MSGLENGTH 1024
+/* 存放需要转换的文件路径 */
+――#define DIRFILETOTXT "/root/detector/before_transform"
+/* 存放日志文件路径 */
+――#define MYSYSLOG "/root/detector/log/client.log"
+/* 策略关键字文件路径 */
+――#define KEYWORD "/root/detector/policy/keyword.plc"
+
+//ssl全局变量
+――SSL *ssl;
+――int keys;
+――int tag = 0; 
+――/* 要发送到到https地址 */
+――char *HTTPSURL = "https://10.63.99.185:8443/cnpc_dlp_v_1.0/m
+――onitorSet.action?action=receiveData&json=";
+――void fa (int signal)  //tag = 1表示收到结束信号
+		/* 发送线程函数 */
+――void *sendto_https_pthread (void *p)  
+		info_ma computerstate(char* netname); //获取计算机信息
+		int mycurlstr(char *url, char msg[][1024], char param[][10]);  //发送信息到https服务器
+		/* 接收线程函数 */
+――void *recivefrom_https_pthread (void *p)
+
+		/* 发送到sftp服务器线程函数 */
+――void *sendto_sftp_pthread (void *p)
+
+		/* 匹配文件线程函数 */
+――void *match_file_pthread (void *p) 
+		//匹配文件函数，dirname：要匹配的文件目录，keywordfile：策略关键字文件
+		int matchfile (char *dirname, char *keywordfile); 
+		/* 转换文件线程函数 */
+――void *transform_file_pthread (void *p) 
+		//转换文件函数，dirname：要转换的文件目录,return 0表示成功
+		int filetotxt(char *dirname);
+		Main()函数，
+		1.启动minihttpd服务器
+		2.创建接收https线程，发送到https线程,发送到sftp线程,匹配文件线程 
+		Client_openssl.c
+		Client_openssl.h
+		/* 显示证书信息 */
+		void show_certs (SSL *ssl);
+		/* 初始化ssl ，cipher为NULL是使用 "RC4-MD5" 加密器*/
+		SSL_CTX* openssl_init (char *cipher, char *cacert, char *mycertf, char *mykeyf);
+		/* openssl和socket建立连接 */
+		SSL* openssl_socket (SSL_CTX* ctx, int sockfd);
+		Client_rdwr.c
+		Client_rdwr.h
+		typedef struct msg 
+		{
+		int flag;
+		char stat[MSGLENGTH];
+		char msg[MSGLENGTH];
+		} msgfile;
+/* 传文件 */
+int file_send (SSL *ssl, char *filename);
+int file_receive (SSL *ssl, char *filename);
+/* 传字符串 */
+int string_send (SSL *ssl, char *str);
+/* 发结构体 */
+int struct_send (SSL *ssl, msgfile famsg);
+Client_socket.c
+Client_socket.h
+//建立socket连接文件描述符
+int socket_fd (char *addr, int port);
+
+Curlhttps.c
+Curlhttps.h
+Judgeftype.c
+Judgeftype.h
+Mydebug.h
+My_syslog.c
+My_syslog.h
+Computerstate.c
+Computerstate.h
+――Rate_cpu.c
+――Rate_disk.c
+――Rate_memory.c
+――Rate_net.c
+
+//磁盘相关结构体
+typedef struct
+{
+		double   total_size;
+		double   total_root;
+		double   total_swap;
+		double   total_home;
+} hadd;
+
+typedef struct node 
+{
+		long free_root;
+		long free_home;
+}free_hadd;
+
+
+//cpu相关结构体
+typedef  struct PACKED
+{
+		char name[20];
+		unsigned int user;
+		unsigned int nice;
+		unsigned int system;
+		unsigned int idle;
+		unsigned int iowait;
+		unsigned int irq;
+		unsigned int softirq;
+} CPU_OCCUPY;
+
+typedef struct PACKED1
+{
+		char name[20];
+		unsigned long total;
+		char name2[20];
+		unsigned long free;
+} MEM_OCCUPY;
+
+
+//汇总信息主结构体
+typedef struct sent_info
+{
+		double cpu;
+		double memory;
+		double disk;
+		double put;
+		double get;
+
+} info_ma;
+
+
+/* cpu使用信息函数 */
+int numcapture(char *str, int *cpunum, int size);
+CPU_OCCUPY get_cpumsg ();
+double get_cpustate();
+
+/* network state 网络状态函数 */
+long *get_networkstate(char *ath0);
+
+/* memory使用信息函数 */
+unsigned long my_split(char* s1,char** s2);
+unsigned long my_split(char* s1,char** s2);
+
+/* 接口函数,返回内存使用率函数 */
+double get_memorystate (MEM_OCCUPY *mem);
+
+/* 磁盘使用信息函数 */
+double rest_hdd();
+int divie_num(char *line,int flag);
+int f_open(char *filename);
+/* 接口函数,返回磁盘使用率 */
+double get_diskstate();
+
+/* 汇总接口，得到计算机信息汇总结构体，内容包括：cpu使用率,内存占用，磁盘占用，网络上行、下行流量 */
+info_ma computerstate(char *netname);
+
+Seekkey.c
+Seekkey.c
+/* 提取名字 */
+int split_name(char *str, char *out);
+/* 获得文件大小 */
+unsigned long get_file_size (const char *path);
+/* 匹配关键字 */
+int seekkey(char *fname, char *keyword);
+/* 遍历目录中的txt文件 */
+int matchfile (char *dirname, char *keywordfile);
+/* 从文件全名中把文件的后缀提取出来 */
+char *split_suffix(char *str);
+/* 提取名字 */
+int split_name(char *str, char *out);

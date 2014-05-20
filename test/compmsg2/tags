@@ -1,0 +1,45 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CPU_OCCUPY	computermsg.h	/^}CPU_OCCUPY;$/;"	t	typeref:struct:PACKED
+MEM_OCCUPY	computermsg.h	/^}MEM_OCCUPY;$/;"	t	typeref:struct:PACKED1
+PACKED	computermsg.h	/^typedef  struct PACKED$/;"	s
+PACKED1	computermsg.h	/^typedef struct PACKED1$/;"	s
+PROJECT1_H_	computermsg.h	2;"	d
+cal_cpuoccupy	cpu.c	/^float cal_cpuoccupy (CPU_OCCUPY *fir, CPU_OCCUPY *sec) $/;"	f
+cal_cpuoccupy	zong.c	/^float cal_cpuoccupy (CPU_OCCUPY *fir, CPU_OCCUPY *sec) $/;"	f
+computermsg	computermsg.c	/^info_ma computermsg(char* netname)$/;"	f
+computermsg	zong.c	/^info_ma computermsg(char* netname)$/;"	f
+cpu	computermsg.h	/^	float cpu;$/;"	m	struct:sent_info
+free	computermsg.h	/^	unsigned long free;$/;"	m	struct:PACKED1
+get	computermsg.h	/^    double  get;$/;"	m	struct:sent_info
+get_cpuoccupy	cpu.c	/^float get_cpuoccupy()$/;"	f
+get_cpuoccupy	zong.c	/^float get_cpuoccupy()$/;"	f
+get_cputotal	cpu.c	/^long int get_cputotal (CPU_OCCUPY *cpust) $/;"	f
+get_cputotal	zong.c	/^long int get_cputotal (CPU_OCCUPY *cpust) $/;"	f
+get_memoccupy	memory.c	/^float get_memoccupy (MEM_OCCUPY *mem)$/;"	f
+get_memoccupy	zong.c	/^float get_memoccupy (MEM_OCCUPY *mem)$/;"	f
+idle	computermsg.h	/^	unsigned int idle;$/;"	m	struct:PACKED
+info_ma	computermsg.h	/^}info_ma;$/;"	t	typeref:struct:sent_info
+iowait	computermsg.h	/^	unsigned int iowait;$/;"	m	struct:PACKED
+irq	computermsg.h	/^	unsigned int irq;$/;"	m	struct:PACKED
+main	test.c	/^int main()$/;"	f
+main	zong.c	/^int main()$/;"	f
+memory	computermsg.h	/^	float memory;$/;"	m	struct:sent_info
+my_ipconfig	eth0.c	/^long *my_ipconfig(char *ath0)  $/;"	f
+my_ipconfig	zong.c	/^long *my_ipconfig(char *ath0)  $/;"	f
+my_split	memory.c	/^unsigned long my_split(char* s1,char** s2)$/;"	f
+my_split	zong.c	/^unsigned long my_split(char* s1,char** s2)$/;"	f
+name	computermsg.h	/^	char name[20];$/;"	m	struct:PACKED
+name	computermsg.h	/^	char name[20];$/;"	m	struct:PACKED1
+name2	computermsg.h	/^	char name2[20];$/;"	m	struct:PACKED1
+nice	computermsg.h	/^	unsigned int nice;$/;"	m	struct:PACKED
+put	computermsg.h	/^	double put;$/;"	m	struct:sent_info
+sent_info	computermsg.h	/^typedef struct sent_info$/;"	s
+softirq	computermsg.h	/^	unsigned int softirq;$/;"	m	struct:PACKED
+system	computermsg.h	/^	unsigned int system;$/;"	m	struct:PACKED
+total	computermsg.h	/^	unsigned long total;$/;"	m	struct:PACKED1
+user	computermsg.h	/^	unsigned int user;$/;"	m	struct:PACKED

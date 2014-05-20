@@ -1,0 +1,36 @@
+
+Disk /dev/sda: 85.9 GB, 85899345920 bytes
+255 heads, 63 sectors/track, 10443 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x000c8181
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           1          64      512000   83  Linux
+Partition 1 does not end on cylinder boundary.
+/dev/sda2              64       10444    83373056   8e  Linux LVM
+
+Disk /dev/mapper/vg_siyu-lv_root: 53.7 GB, 53687091200 bytes
+255 heads, 63 sectors/track, 6527 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x00000000
+
+
+Disk /dev/mapper/vg_siyu-lv_swap: 2113 MB, 2113929216 bytes
+255 heads, 63 sectors/track, 257 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x00000000
+
+
+Disk /dev/mapper/vg_siyu-lv_home: 29.6 GB, 29569843200 bytes
+255 heads, 63 sectors/track, 3594 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x00000000
+
